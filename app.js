@@ -10,7 +10,7 @@ const https = require('https');
 const xml2js = require('xml2js');
 
 
-http.createServer(function(req, res) {
+http.createServer(function (req, res) {
     res.writeHead(200, { 'Content-Type': 'text/plain' });
     res.end('Hello World\n');
 }).listen(port);
@@ -38,33 +38,14 @@ client.on('message', async message => {
                     message.reply("Introduce un comando valido");
                 }
 
-                if (args[0] !== "all") {
-                    var dkps = await GetDkp(args[0]);
-                    var name = dkps.playername;
-                    var wowClass = dkps.class;
-                    var rank = dkps.rank;
-                    var total = dkps.total;
-                    var hours = dkps.hours;
-                    var spent = dkps.spent;
-                    var net = dkps.net;
-                    message.reply(`${name}: Class:${wowClass} Dkps Actuales: ${net} Total Dkps: ${total} Dkps Gastados: ${spent} Horas:${hours}`);
-                } else {
-                    var t = new Table;
-                    var dkpsAll = await GetDkp(args[0]);
-                    dkpsAll.forEach(function(dkpCharacter) {
-
-                        var parsedResult = dkpCharacter["ATTR"];
-                        var name = parsedResult.playername;
-                        var wowClass = parsedResult.class;
-                        var rank = parsedResult.rank;
-                        var total = parsedResult.total;
-                        var hours = parsedResult.hours;
-                        var spent = parsedResult.spent;
-                        var net = parsedResult.net;
-
-                        message.reply(`${name}: Class:${wowClass} Dkps Actuales: ${net} Total Dkps: ${total} Dkps Gastados: ${spent} Horas:${hours}`);
-                    });
-                }
+                var dkps = await GetDkp(args[0]);
+                var name = dkps.playername;
+                var wowClass = dkps.class;
+                var total = dkps.total;
+                var hours = dkps.hours;
+                var spent = dkps.spent;
+                var net = dkps.net;
+                message.reply(`${name}: Class:${wowClass} Dkps Actuales: ${net} Total Dkps: ${total} Dkps Gastados: ${spent} Horas:${hours}`);
                 break;
         }
     }
@@ -75,16 +56,16 @@ client.login(auth.token);
 function GetDataFromDkpAzure(character) {
     return new Promise((resolve, reject) => {
         var data = '';
-        https.get('https://overdkp.azurewebsites.net/data.xml', function(res) {
+        https.get('https://overdkp.azurewebsites.net/data.xml', function (res) {
             if (res.statusCode >= 200 && res.statusCode < 400) {
 
-                res.on('data', function(data_) {
+                res.on('data', function (data_) {
                     data += data_.toString();
                 });
 
-                res.on('end', function() {
+                res.on('end', function () {
                     console.log('data', data);
-                    parser.parseString(data, function(err, result) {
+                    parser.parseString(data, function (err, result) {
 
                         console.log('FINISHED', err, result);
 
@@ -103,17 +84,12 @@ function GetDataFromDkpAzure(character) {
                 });
             }
         });
-
-
-        // const val = Math.round(Math.random() * 1); // 0 or 1, at random
-
-        // val ? resolve(data) : reject('Nope ??');
     });
 }
 
 async function GetDkp(character) {
     try {
-        const msg = await GetDataFromDkpAzure(character);
+        const msg = GetDataFromDkpAzure(character);
         console.log(msg);
         return msg;
     } catch (err) {

@@ -30,9 +30,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Content Include="auth.json" />
-    <Content Include="bot.js">
-      <SubType>Code</SubType>
-    </Content>
     <Content Include="web.config" />
     <None Include="OverDKP - Web Deploy.pubxml" />
     <Content Include="app.js" />
