@@ -1,6 +1,6 @@
 'use strict';
 var http = require('http');
-var port = process.env.PORT || 1337;
+var port = process.env.PORT || 666;
 
 const Discord = require('discord.js');
 const client = new Discord.Client();
@@ -11,7 +11,9 @@ const xml2js = require('xml2js');
 
 
 http.createServer(function (req, res) {
-    res.writeHead(200, { 'Content-Type': 'text/plain' });
+    res.writeHead(200, {
+        'Content-Type': 'text/plain'
+    });
     res.end('Hello World\n');
 }).listen(port);
 
