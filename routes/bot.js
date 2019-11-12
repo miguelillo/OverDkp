@@ -1,8 +1,11 @@
 'use strict';
+
 var http = require('http');
 
 const Discord = require('discord.js');
+
 const client = new Discord.Client();
+
 var {
     hunter,
     mage,
@@ -18,8 +21,11 @@ const {
     prefix,
     token
 } = require('./auth.json');
+
 var Table = require('easy-table');
+
 const https = require('https');
+
 const xml2js = require('xml2js');
 
 const sort_by = (field, reverse, primer) => {
@@ -48,6 +54,7 @@ client.on('ready', () => {
 });
 
 client.on('message', async message => {
+
     if (message.content.substring(0, 1) === prefix) {
         var args = message.content.substring(1).split(' ');
         var cmd = args[0];
@@ -56,26 +63,42 @@ client.on('message', async message => {
         switch (cmd) {
             case 'dkp':
                 if (args[0] === undefined) {
-                    message.reply("Introduce un comando valido");
-                }
-                resetWowClass();
-                if (args[0] !== "all") {
-                    var dkps = await GetDkp(args[0]);
-                    var name = dkps.playername;
-                    var wowClass = dkps.class;
-                    var rank = dkps.rank;
-                    var total = dkps.total;
-                    var hours = dkps.hours;
-                    var spent = dkps.spent;
-                    var net = dkps.net;
-                    message.reply(`${name}: Class:${wowClass} Dkps Actuales: ${net} Total Dkps: ${total} Dkps Gastados: ${spent} Horas:${hours}`);
-                } else {
+                    message.reply("Introduce un comando valido ?dkp all o ?dkp charactername");
+
+                    message.reply("Mientras tanto, toma todos los putos dkps.");
+
                     var t = new Table;
                     var dkpsAll = await GetDkp(args[0]);
                     dkpsAll.forEach(function (dkpCharacter) {
                         savePlayerByClass(dkpCharacter["ATTR"]);
                     });
                     sendEmbed(message);
+                } else {
+                    resetWowClass();
+                    if (args[0] !== "all") {
+                        var dkps = await GetDkp(args[0]);
+                        var name = dkps.playername;
+                        if (name !== undefined) {
+                            var wowClass = dkps.class;
+                            var rank = dkps.rank;
+                            var total = dkps.total;
+                            var hours = dkps.hours;
+                            var spent = dkps.spent;
+                            var net = dkps.net;
+                            message.reply(`${name}: Class:${wowClass} Dkps Actuales: ${net} Total Dkps: ${total} Dkps Gastados: ${spent} Horas:${hours}`);
+                        } else {
+                            message.reply(`Pon bien el nombre hostia!`, {
+                                files: ['https://3.bp.blogspot.com/-pF5qW9wP2Qc/UgS8eJVpM5I/AAAAAAAACRU/wKYdQ3LsL30/s400/Antonio+Banderas.gif']
+                            })
+                        }
+                    } else {
+                        var t = new Table;
+                        var dkpsAll = await GetDkp(args[0]);
+                        dkpsAll.forEach(function (dkpCharacter) {
+                            savePlayerByClass(dkpCharacter["ATTR"]);
+                        });
+                        sendEmbed(message);
+                    }
                 }
                 break;
         }
