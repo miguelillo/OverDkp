@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<QDKP2EXPORT-DKP list="guild" time="1582288439" guild="OveR" exporter="Hildegard" >
+<QDKP2EXPORT-DKP list="guild" time="1582288792" guild="OveR" exporter="Hildegard" >
   <PLAYER playername="Wutlol-Mandokir" class="Rogue" rank="Alter" net="0" total="0" spent="0" hours="0" />
   <PLAYER playername="Electroll-Mandokir" class="Shaman" rank="Miembro" net="184" total="184" spent="0" hours="9.2" />
   <PLAYER playername="Craul-Mandokir" class="Warrior" rank="Raider" net="506" total="1124" spent="618" hours="28.8" />
@@ -198,5 +198,5 @@
   <PLAYER playername="Moxo-Mandokir" class="Rogue" rank="Officer" net="401" total="1037" spent="636" hours="25.3" />
   <PLAYER playername="Nelcius-Mandokir" class="Mage" rank="Officer" net="41" total="492" spent="451" hours="28.8" />
   <PLAYER playername="Visawarrior-Mandokir" class="Druid" rank="Officer" net="460" total="840" spent="380" hours="19" />
-  <PLAYER playername="Baardock-Mandokir" class="Warrior" rank="Guild Master" net="99999999999" total="1116" spent="522" hours="30.8" />
+  <PLAYER playername="Baardock-Mandokir" class="Warrior" rank="Guild Master" net="594" total="1116" spent="522" hours="30.8" />
 </QDKP2EXPORT-DKP>
