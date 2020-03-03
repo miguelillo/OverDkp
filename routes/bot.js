@@ -58,8 +58,16 @@ client.on('message', async message => {
     if (message.channel.name === "updateddkps") {
         if (message.attachments.size > 0) {
             if (message.attachments.every(getDataFromXml)) {
-                message.reply("Actualizando DKPS");
+                message.reply("DKPS ACTUALIZADOS");
+                resetWowClass();
+                var t = new Table;
+                var dkpsAll = await GetDkp("all");
+                dkpsAll.forEach(function (dkpCharacter) {
+                    savePlayerByClass(dkpCharacter["ATTR"]);
+                });
 
+
+                sendEmbed(message);
             }
         }
     }
@@ -116,12 +124,11 @@ client.on('message', async message => {
 
 client.login(token);
 
-function getDataFromXml(msgAttach) {
+async function getDataFromXml(msgAttach) {
     var url = msgAttach.url;
 
     let image_path = './public/data/data.xml';
     saveImageToDisk(url, image_path);
-
 }
 
 function saveImageToDisk(url, localPath) {
@@ -131,19 +138,6 @@ function saveImageToDisk(url, localPath) {
         response.pipe(file);
     });
 }
-
-function download(url, dest, cb) {
-    var file = fs.createWriteStream(dest);
-    var request = http.get(url, function (response) {
-        response.pipe(file);
-        file.on('finish', function () {
-            file.close(cb); // close() is async, call cb after close completes.
-        });
-    }).on('error', function (err) { // Handle errors
-        fs.unlink(dest); // Delete the file async. (But we don't check the result)
-        if (cb) cb(err.message);
-    });
-};
 
 function resetWowClass() {
     hunter.players = [];
@@ -188,7 +182,7 @@ function GetDataFromDkpAzure(character) {
 
 async function GetDkp(character) {
     try {
-        const msg = GetDataFromDkpAzure(character);
+        const msg = await GetDataFromDkpAzure(character);
         console.log(msg);
         return msg;
     } catch (err) {
@@ -212,7 +206,7 @@ function getList(list) {
 }
 
 function sendEmbed(message) {
-    message.channel.send({
+    client.channels.get("636160395790516235").send({
         embed: {
             color: 3447003,
             title: "Over DKP List:",
