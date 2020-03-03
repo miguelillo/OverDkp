@@ -1,7 +1,7 @@
 'use strict';
 
-var http = require('http');
-
+const http = require('http');
+const fs = require('fs');
 const Discord = require('discord.js');
 
 const client = new Discord.Client();
@@ -55,6 +55,15 @@ client.on('ready', () => {
 
 client.on('message', async message => {
 
+    if (message.channel.name === "updateddkps") {
+        if (message.attachments.size > 0) {
+            if (message.attachments.every(getDataFromXml)) {
+                message.reply("Actualizando DKPS");
+
+            }
+        }
+    }
+
     if (message.content.substring(0, 1) === prefix) {
         var args = message.content.substring(1).split(' ');
         var cmd = args[0];
@@ -106,6 +115,35 @@ client.on('message', async message => {
 });
 
 client.login(token);
+
+function getDataFromXml(msgAttach) {
+    var url = msgAttach.url;
+
+    let image_path = './public/data/data.xml';
+    saveImageToDisk(url, image_path);
+
+}
+
+function saveImageToDisk(url, localPath) {
+    var fullUrl = url;
+    var file = fs.createWriteStream(localPath);
+    var request = https.get(url, function (response) {
+        response.pipe(file);
+    });
+}
+
+function download(url, dest, cb) {
+    var file = fs.createWriteStream(dest);
+    var request = http.get(url, function (response) {
+        response.pipe(file);
+        file.on('finish', function () {
+            file.close(cb); // close() is async, call cb after close completes.
+        });
+    }).on('error', function (err) { // Handle errors
+        fs.unlink(dest); // Delete the file async. (But we don't check the result)
+        if (cb) cb(err.message);
+    });
+};
 
 function resetWowClass() {
     hunter.players = [];
