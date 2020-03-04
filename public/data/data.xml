@@ -1,22 +1,18 @@
 <?xml version="1.0" encoding="ISO-8859-1" ?>
-<QDKP2EXPORT-DKP list="guild" time="1583278101" guild="OveR" exporter="Hildegard" >
+<QDKP2EXPORT-DKP list="guild" time="1583280182" guild="OveR" exporter="Hildegard" >
   <PLAYER playername="Shirkita-Mandokir" class="Warlock" rank="Alter" net="0" total="0" spent="0" hours="0" />
   <PLAYER playername="Clairvoyant-Mandokir" class="Warrior" rank="Alter" net="0" total="0" spent="0" hours="0" />
   <PLAYER playername="Lovelorn-Mandokir" class="Priest" rank="Alter" net="0" total="0" spent="0" hours="0" />
+  <PLAYER playername="Sinforoso-Mandokir" class="Shaman" rank="Alter" net="0" total="0" spent="0" hours="0" />
   <PLAYER playername="Witus-Mandokir" class="Shaman" rank="Miembro" net="0" total="0" spent="0" hours="0" />
   <PLAYER playername="Breathnuke-Mandokir" class="Rogue" rank="Miembro" net="115" total="115" spent="0" hours="4.5" />
-  <PLAYER playername="Chitorfrmd-Mandokir" class="Mage" rank="Miembro" net="95" total="145" spent="50" hours="5" />
-  <PLAYER playername="Pedazos-Mandokir" class="Rogue" rank="Miembro" net="42" total="42" spent="0" hours="2" />
-  <PLAYER playername="Trozos-Mandokir" class="Warrior" rank="Miembro" net="20" total="20" spent="0" hours="2" />
   <PLAYER playername="Vilihvalky-Mandokir" class="Warlock" rank="Miembro" net="130" total="130" spent="0" hours="5" />
-  <PLAYER playername="Emar-Mandokir" class="Warrior" rank="Raider" net="550" total="1204" spent="654" hours="39.3" />
+  <PLAYER playername="Berehto-Mandokir" class="Mage" rank="Raider" net="298" total="1144" spent="846" hours="28.1" />
   <PLAYER playername="Kajis-Mandokir" class="Warrior" rank="Raider" net="1047" total="1047" spent="0" hours="13" />
   <PLAYER playername="Marlasinger-Mandokir" class="Priest" rank="Raider" net="427" total="509" spent="82" hours="20.8" />
   <PLAYER playername="Metradog-Mandokir" class="Warrior" rank="Raider" net="252" total="454" spent="202" hours="23.3" />
   <PLAYER playername="Miwelox-Mandokir" class="Mage" rank="Raider" net="462" total="979" spent="517" hours="28.6" />
-  <PLAYER playername="Totetu-Mandokir" class="Druid" rank="Veteran" net="354" total="654" spent="300" hours="30.3" />
   <PLAYER playername="Hildegard-Mandokir" class="Warrior" rank="Officer" net="453" total="1244" spent="791" hours="35.8" />
-  <PLAYER playername="Nelcius-Mandokir" class="Mage" rank="Officer" net="301" total="752" spent="451" hours="39.3" />
   <PLAYER playername="Nekotiel-Mandokir" class="Warrior" rank="FandF" net="0" total="0" spent="0" hours="0" />
   <PLAYER playername="Snitch-Mandokir" class="Druid" rank="FandF" net="0" total="0" spent="0" hours="0" />
   <PLAYER playername="Waifuofdeath-Mandokir" class="Warlock" rank="FandF" net="0" total="0" spent="0" hours="0" />
@@ -162,7 +158,6 @@
   <PLAYER playername="Panyagua-Mandokir" class="Mage" rank="Alter" net="0" total="0" spent="0" hours="0" />
   <PLAYER playername="Perroflaco-Mandokir" class="Druid" rank="Alter" net="0" total="0" spent="0" hours="0" />
   <PLAYER playername="Saringg-Mandokir" class="Priest" rank="Alter" net="60" total="505" spent="445" hours="9.5" />
-  <PLAYER playername="Sinforoso-Mandokir" class="Shaman" rank="Alter" net="0" total="0" spent="0" hours="0" />
   <PLAYER playername="Yonkie-Mandokir" class="Druid" rank="Alter" net="0" total="0" spent="0" hours="0" />
   <PLAYER playername="Zeiklol-Mandokir" class="Hunter" rank="Alter" net="0" total="0" spent="0" hours="0" />
   <PLAYER playername="Holymankz-Mandokir" class="Priest" rank="Miembro" net="0" total="0" spent="0" hours="0" />
@@ -176,21 +171,24 @@
   <PLAYER playername="Aryse-Mandokir" class="Priest" rank="Miembro" net="130" total="130" spent="0" hours="5" />
   <PLAYER playername="Bonobo-Mandokir" class="Warrior" rank="Miembro" net="110" total="110" spent="0" hours="5" />
   <PLAYER playername="Bpower-Mandokir" class="Mage" rank="Miembro" net="0" total="0" spent="0" hours="0" />
+  <PLAYER playername="Chitorfrmd-Mandokir" class="Mage" rank="Miembro" net="95" total="145" spent="50" hours="5" />
   <PLAYER playername="Darigaz-Mandokir" class="Mage" rank="Miembro" net="90" total="90" spent="0" hours="2.5" />
   <PLAYER playername="Hacefrio-Mandokir" class="Mage" rank="Miembro" net="0" total="0" spent="0" hours="0" />
   <PLAYER playername="Mithosiris-Mandokir" class="Warlock" rank="Miembro" net="130" total="145" spent="15" hours="4" />
   <PLAYER playername="Nezhka-Mandokir" class="Rogue" rank="Miembro" net="130" total="145" spent="15" hours="5" />
+  <PLAYER playername="Pedazos-Mandokir" class="Rogue" rank="Miembro" net="42" total="42" spent="0" hours="2" />
   <PLAYER playername="Phrenetic-Mandokir" class="Rogue" rank="Miembro" net="0" total="0" spent="0" hours="0" />
   <PLAYER playername="Proedby-Mandokir" class="Rogue" rank="Miembro" net="110" total="110" spent="0" hours="5" />
   <PLAYER playername="Tejas-Mandokir" class="Warrior" rank="Miembro" net="0" total="0" spent="0" hours="0" />
   <PLAYER playername="Thiesso-Mandokir" class="Hunter" rank="Miembro" net="242" total="392" spent="150" hours="18.1" />
+  <PLAYER playername="Trozos-Mandokir" class="Warrior" rank="Miembro" net="20" total="20" spent="0" hours="2" />
   <PLAYER playername="Verox-Mandokir" class="Rogue" rank="Miembro" net="110" total="110" spent="0" hours="4.5" />
   <PLAYER playername="Xeldrain-Mandokir" class="Priest" rank="Miembro" net="0" total="0" spent="0" hours="0" />
   <PLAYER playername="Altharon-Mandokir" class="Priest" rank="Raider" net="236" total="982" spent="746" hours="31.6" />
-  <PLAYER playername="Berehto-Mandokir" class="Mage" rank="Raider" net="298" total="1144" spent="846" hours="28.1" />
   <PLAYER playername="Craul-Mandokir" class="Warrior" rank="Raider" net="243" total="1384" spent="1141" hours="39.3" />
   <PLAYER playername="Cucuweys-Mandokir" class="Priest" rank="Raider" net="574" total="1024" spent="450" hours="35.3" />
   <PLAYER playername="Electroll-Mandokir" class="Shaman" rank="Raider" net="324" total="397" spent="73" hours="16.7" />
+  <PLAYER playername="Emar-Mandokir" class="Warrior" rank="Raider" net="550" total="1204" spent="654" hours="39.3" />
   <PLAYER playername="Falkhorn-Mandokir" class="Druid" rank="Raider" net="577" total="1339" spent="762" hours="37.3" />
   <PLAYER playername="Flypersistem-Mandokir" class="Mage" rank="Raider" net="217" total="262" spent="45" hours="13.3" />
   <PLAYER playername="Fullverdes-Mandokir" class="Warrior" rank="Raider" net="549" total="1250" spent="701" hours="34.3" />
@@ -217,9 +215,11 @@
   <PLAYER playername="Rosquillero-Mandokir" class="Warrior" rank="Veteran" net="155" total="490" spent="335" hours="2.5" />
   <PLAYER playername="Shandryx-Mandokir" class="Mage" rank="Veteran" net="65" total="695" spent="630" hours="10.5" />
   <PLAYER playername="Skygay-Mandokir" class="Priest" rank="Veteran" net="393" total="1119" spent="726" hours="33.6" />
+  <PLAYER playername="Totetu-Mandokir" class="Druid" rank="Veteran" net="354" total="654" spent="300" hours="30.3" />
   <PLAYER playername="Visagold-Mandokir" class="Mage" rank="Veteran" net="60" total="90" spent="30" hours="2" />
-  <PLAYER playername="Gron-Mandokir" class="Hunter" rank="Officer" net="2" total="1289" spent="1287" hours="35.3" />
+  <PLAYER playername="Gron-Mandokir" class="Hunter" rank="Officer" net="546" total="1289" spent="743" hours="35.3" />
   <PLAYER playername="Moxo-Mandokir" class="Rogue" rank="Officer" net="230" total="1297" spent="1067" hours="35.8" />
+  <PLAYER playername="Nelcius-Mandokir" class="Mage" rank="Officer" net="301" total="752" spent="451" hours="39.3" />
   <PLAYER playername="Visawarrior-Mandokir" class="Druid" rank="Officer" net="124" total="1045" spent="921" hours="26" />
   <PLAYER playername="Baardock-Mandokir" class="Warrior" rank="Guild Master" net="282" total="1397" spent="1115" hours="39.3" />
 </QDKP2EXPORT-DKP>

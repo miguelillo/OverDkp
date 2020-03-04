@@ -58,16 +58,7 @@ client.on('message', async message => {
     if (message.channel.name === "updateddkps") {
         if (message.attachments.size > 0) {
             if (message.attachments.every(getDataFromXml)) {
-                message.reply("DKPS ACTUALIZADOS");
-                resetWowClass();
-                var t = new Table;
-                var dkpsAll = await GetDkp("all");
-                dkpsAll.forEach(function (dkpCharacter) {
-                    savePlayerByClass(dkpCharacter["ATTR"]);
-                });
 
-
-                sendEmbed(message);
             }
         }
     }
@@ -128,14 +119,33 @@ async function getDataFromXml(msgAttach) {
     var url = msgAttach.url;
 
     let image_path = './public/data/data.xml';
-    saveImageToDisk(url, image_path);
+    saveImageToDisk(url, image_path, msgAttach);
+
 }
 
-function saveImageToDisk(url, localPath) {
+async function saveImageToDisk(url, localPath, msgAttach) {
     var fullUrl = url;
     var file = fs.createWriteStream(localPath);
+    var body = '';
+
+
     var request = https.get(url, function (response) {
         response.pipe(file);
+        file.on('finish', async function () {
+            file.close();
+            msgAttach.message.reply("DKPS ACTUALIZADOS");
+            resetWowClass();
+            var t = new Table;
+            var dkpsAll = await GetDkp("all");
+            dkpsAll.forEach(function (dkpCharacter) {
+                savePlayerByClass(dkpCharacter["ATTR"]);
+            });
+            sendEmbed(msgAttach.message);
+            console.log(body);
+        });
+    }).on('error', function (err) { // Handle errors
+        fs.unlink(dest); // Delete the file async. (But we don't check the result)
+        if (cb) cb(err.message);
     });
 }
 
